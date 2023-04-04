@@ -6,6 +6,7 @@
     "scripts": {
         "dev:server": "nodemon -e ts -w apps/server --exec 'ts-node ./apps/server/src/index.ts'",
         "dev:frontend": "nodemon -e ts -e tsx -w apps/frontend --exec 'webpack serve --config ./apps/frontend/webpack.dev.js'",
+        "dev": "concurrently \"npm:dev:server\" \"npm:dev:frontend\"",
         "lint": "eslint . --ext .ts --ext .tsx",
         "format": "eslint . --ext .ts --ext .tsx --fix && prettier 'src/**/*.{json,ts,tsx}' --write",
         "test": "echo 'no tests yet'"
@@ -33,6 +34,7 @@
         "@types/react-dom": "^18.0.11",
         "@typescript-eslint/eslint-plugin": "^5.4.0",
         "@typescript-eslint/parser": "^5.4.0",
+        "concurrently": "^8.0.1",
         "eslint": "^8.2.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-prettier": "^4.0.0",
