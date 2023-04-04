@@ -1,5 +1,18 @@
 import React from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Component from './Component'
 
-const App = () => <div>Hello world!</div>
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Component name="home" />,
+    },
+])
+
+const App = () => (
+    <div>
+        <RouterProvider router={router} />
+    </div>
+)
 
 export default App
