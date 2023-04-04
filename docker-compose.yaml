@@ -5,7 +5,7 @@ services:
         command: ["start-dev"]
         ports:
             - '8080:8080'
-        container_name: car_owner_app_postgres
+        container_name: keycloak
         environment:
             KEYCLOAK_ADMIN: 'admin'
             KEYCLOAK_ADMIN_PASSWORD: 'admin'
