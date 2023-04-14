@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
     entry: {
@@ -25,11 +25,9 @@ module.exports = {
         path: path.resolve(__dirname, 'dist', 'app'),
     },
     plugins: [
-        new webpack.DefinePlugin({
-            'process.env': JSON.stringify({}),
-        }),
         new HtmlWebpackPlugin({
             template: './apps/frontend/src/index.html',
         }),
+        new Dotenv({ path: 'apps/frontend/.env' }),
     ],
 }

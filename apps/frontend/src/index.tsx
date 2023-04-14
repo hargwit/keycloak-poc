@@ -1,8 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import App from './App'
-import dotenv from 'dotenv'
 
-dotenv.config()
+const domNode = document.getElementById('root')
 
-ReactDOM.render(<App />, document.getElementById('root'))
+if (!domNode) throw new Error('Unable to find root element. Cannot render application.')
+
+const root = createRoot(domNode)
+
+root.render(<App />)
